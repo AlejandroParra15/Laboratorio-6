@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="1178.0" style="-fx-background-color: snow;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.Controller">
+  <tabs>
+    <Tab text=" Datos  ">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Pane prefHeight="150.0" prefWidth="946.0" style="-fx-background-color: tomato; -fx-border-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="453.0" layoutY="16.0" text="Banner">
+                           <font>
+                              <Font name="System Bold Italic" size="81.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </top>
+               <center>
+                  <Pane prefHeight="600.0" prefWidth="585.0" style="-fx-background-color: snow; -fx-border-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="58.0" layoutY="65.0" prefHeight="102.0" prefWidth="470.0" style="-fx-border-color: black;">
+                           <children>
+                              <TextField fx:id="tfLoadData" layoutX="18.0" layoutY="29.0" prefHeight="31.0" prefWidth="222.0" />
+                              <Button layoutX="277.0" layoutY="29.0" mnemonicParsing="false" onAction="#openFile" prefHeight="32.0" prefWidth="80.0" text="Open File" />
+                              <Button layoutX="370.0" layoutY="29.0" mnemonicParsing="false" onAction="#loadData" prefHeight="32.0" prefWidth="83.0" text="Load" />
+                              <Label fx:id="lbMessageLoad" layoutX="32.0" layoutY="71.0" prefHeight="27.0" prefWidth="354.0" text="Los posibles asistentes al evento han sido cargados exitosamente" />
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="58.0" layoutY="48.0" prefHeight="28.0" prefWidth="128.0" style="-fx-background-color: deepskyblue;" text="load data">
+                           <font>
+                              <Font name="System Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="58.0" layoutY="217.0" prefHeight="102.0" prefWidth="470.0" style="-fx-border-color: black;">
+                           <children>
+                              <TextField fx:id="tfSearchSpectators" layoutX="45.0" layoutY="36.0" prefHeight="31.0" prefWidth="198.0" />
+                              <Button layoutX="280.0" layoutY="36.0" mnemonicParsing="false" onAction="#searchSpectators" prefHeight="32.0" prefWidth="80.0" text="Search" />
+                              <Label layoutX="14.0" layoutY="35.0" prefHeight="33.0" prefWidth="32.0" text="ID:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="5.0" prefHeight="92.0" prefWidth="77.0">
+                                 <children>
+                                    <Label prefHeight="33.0" prefWidth="84.0" text="TIME (ms)">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="timeSpectators" alignment="CENTER" prefHeight="55.0" prefWidth="46.0">
+                                       <font>
+                                          <Font name="System Bold" size="40.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Label fx:id="lbMessageSpectators" layoutX="45.0" layoutY="80.0" prefHeight="17.0" prefWidth="316.0" text="No se encontró el espectador con el id xxx" />
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="58.0" layoutY="200.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search spectators">
+                           <font>
+                              <Font name="System Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="56.0" layoutY="377.0" prefHeight="102.0" prefWidth="470.0" style="-fx-border-color: black;">
+                           <children>
+                              <TextField fx:id="tfSearchParticipantes" layoutX="45.0" layoutY="36.0" prefHeight="31.0" prefWidth="198.0" />
+                              <Button layoutX="280.0" layoutY="36.0" mnemonicParsing="false" onAction="#searchParticipantes" prefHeight="32.0" prefWidth="80.0" text="Search" />
+                              <Label layoutX="14.0" layoutY="35.0" prefHeight="33.0" prefWidth="32.0" text="ID:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="5.0" prefHeight="92.0" prefWidth="77.0">
+                                 <children>
+                                    <Label prefHeight="33.0" prefWidth="84.0" text="TIME (ms)">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="timeParticipantes" alignment="CENTER" prefHeight="55.0" prefWidth="46.0">
+                                       <font>
+                                          <Font name="System Bold" size="40.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Label fx:id="lbMessageParticipantes" layoutX="45.0" layoutY="80.0" prefHeight="17.0" prefWidth="316.0" text="No se encontró el espectador con el id xxx" />
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="56.0" layoutY="360.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search participantes">
+                           <font>
+                              <Font name="System Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </center>
+               <right>
+                  <Pane prefHeight="600.0" prefWidth="597.0" style="-fx-background-color: snow; -fx-border-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="33.0" layoutY="56.0" prefHeight="427.0" prefWidth="532.0" style="-fx-background-color: snow; -fx-border-color: black;">
+                           <children>
+                              <Pane layoutX="165.0" layoutY="37.0" prefHeight="147.0" prefWidth="170.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <ImageView fx:id="imvPhoto" fitHeight="145.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="152.0" layoutY="207.0" prefHeight="33.0" prefWidth="32.0" text="ID:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfID" layoutX="184.0" layoutY="211.0" prefHeight="25.0" prefWidth="165.0" />
+                              <Label layoutX="13.0" layoutY="280.0" prefHeight="33.0" prefWidth="97.0" text="First name:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfFirstName" layoutX="111.0" layoutY="284.0" prefHeight="25.0" prefWidth="145.0" />
+                              <Label layoutX="15.0" layoutY="326.0" prefHeight="33.0" prefWidth="98.0" text="Last name:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfLastName" layoutX="113.0" layoutY="330.0" prefHeight="25.0" prefWidth="143.0" />
+                              <Label layoutX="21.0" layoutY="370.0" prefHeight="33.0" prefWidth="60.0" text="Email:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfEmail" layoutX="116.0" layoutY="374.0" prefHeight="25.0" prefWidth="140.0" />
+                              <Label layoutX="276.0" layoutY="281.0" prefHeight="33.0" prefWidth="72.0" text="Gender:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfGender" layoutX="359.0" layoutY="285.0" prefHeight="25.0" prefWidth="145.0" />
+                              <Label layoutX="276.0" layoutY="326.0" prefHeight="33.0" prefWidth="81.0" text="Country:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfCountry" layoutX="359.0" layoutY="330.0" prefHeight="25.0" prefWidth="145.0" />
+                              <Label layoutX="276.0" layoutY="372.0" prefHeight="33.0" prefWidth="93.0" text="Birthday:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfBirthday" layoutX="362.0" layoutY="376.0" prefHeight="25.0" prefWidth="142.0" />
+                           </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="33.0" layoutY="42.0" prefHeight="28.0" prefWidth="128.0" style="-fx-background-color: deepskyblue;" text="see data">
+                           <font>
+                              <Font name="System Bold Italic" size="19.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+               </right>
+            </BorderPane>
+         </content></Tab>
+    <Tab text="Estructuras">
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" />
+         </content></Tab>
+  </tabs>
+</TabPane>
