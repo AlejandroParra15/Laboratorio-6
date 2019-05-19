@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Random;
 
 public class Championship {
 	
@@ -19,6 +18,7 @@ public class Championship {
 	//------------------------------
 	private int treeSize;
 	private int counter;
+	private int linkedListSize;
 
 	//------------------------------
 	// Constructor 
@@ -26,6 +26,7 @@ public class Championship {
 	public Championship() {
 		treeSize = 0; 
 		counter = 0;
+		linkedListSize=0;
 	}
 	
 	//------------------------------
@@ -100,6 +101,7 @@ public class Championship {
 			toAdd.setPrev(lastone);
 			lastone.setNext(toAdd);
 		}
+		linkedListSize++;
 	}
 	
 	public Spectators getLast() {
