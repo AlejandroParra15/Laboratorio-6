@@ -12,8 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import model.Championship;
 
 public class Controller {
+	
+	private Championship ch;
 	// FXML VARIABLES
 	@FXML
 	private TextField tfLoadData;
@@ -52,11 +55,18 @@ public class Controller {
 	String path;
 
 	public void initialize() {
-
+		ch = new Championship();
 	}
 
 	@FXML
 	void loadData(ActionEvent event) {
+		try {
+			ch.loadTextFile(path, ",");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*
 		BufferedReader br = null;
 		FileReader fr = null;
 		try {
@@ -72,7 +82,7 @@ public class Controller {
 			br.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	@FXML

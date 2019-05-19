@@ -1,6 +1,12 @@
 package model;
 
-public class Spectators {
+public class Spectators{
+	
+	private Spectators next;
+	private Spectators prev;
+	private Spectators left;
+	private Spectators right;
+	private Spectators parent; 
 
 	private String id;
 	private String firstName;
@@ -75,6 +81,34 @@ public class Spectators {
 
 	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
+	}
+
+	public Spectators getRight() {
+		return right;
+	}
+
+	public void setRight(Spectators right) {
+		this.right = right;
+	}
+
+	public Spectators getParent() {
+		return parent;
+	}
+
+	public void setParent(Spectators parent) {
+		this.parent = parent;
+	}
+
+	public Spectators getLeft() {
+		return left;
+	}
+
+	public void setLeft(Spectators left) {
+		this.left = left;
+	}
+
+	public int compare(Spectators sx) {
+		return id.compareTo(sx.getId());
 	}
 
 }
