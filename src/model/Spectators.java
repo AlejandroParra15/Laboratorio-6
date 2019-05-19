@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Spectators{
 	
 	//------------------------------
@@ -34,6 +36,8 @@ public class Spectators{
 		this.gender = gender;
 		this.country = country;
 		this.birthdate = birthdate;
+		next=null;
+		prev=null;
 	}
 	
 	//------------------------------
@@ -122,8 +126,27 @@ public class Spectators{
 	public int compare(Spectators sx) {
 		return id.compareTo(sx.getId());
 	}
+
+	public Spectators getNext() {
+		return next;
+	}
+
+	public void setNext(Spectators next) {
+		this.next = next;
+	}
+
+	public Spectators getPrev() {
+		return prev;
+	}
+
+	public void setPrev(Spectators prev) {
+		this.prev = prev;
+	}
 	
 	//------------------------------
 	// Methods 
 	//------------------------------
+	
+	
+	
 }

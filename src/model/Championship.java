@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 public class Championship {
 	
@@ -12,12 +13,19 @@ public class Championship {
 	//------------------------------
 	private Spectators root;
 	private Spectators first;
+	
+	//------------------------------
+	// Attributes
+	//------------------------------
+	private int treeSize;
+	private int counter;
 
 	//------------------------------
 	// Constructor 
 	//------------------------------
 	public Championship() {
-	
+		treeSize = 0; 
+		counter = 0;
 	}
 	
 	//------------------------------
@@ -42,6 +50,10 @@ public class Championship {
 				String birthdate = parts[6];
 				Spectators sx = new Spectators(id, firstName, lastName, email, gender, country, birthdate);
 				addSpectator(sx);
+				if(counter%2==0)
+					addToLinkedList(sx);
+				counter++;
+				treeSize++;
 			}
 			line=br.readLine();
 			
@@ -77,4 +89,26 @@ public class Championship {
 		      }
 		  }
 	}
+	
+	public void addToLinkedList(Spectators sx) {
+		Spectators toAdd = sx;
+		
+		if(first==null) {
+			first=toAdd;
+		}else {
+			Spectators lastone = getLast();
+			toAdd.setPrev(lastone);
+			lastone.setNext(toAdd);
+		}
+	}
+	
+	public Spectators getLast() {
+		Spectators current=first;
+		while(current.getNext()!=null) {
+			current=current.getNext();
+		}
+		return current;
+	}
+	
 }
+
