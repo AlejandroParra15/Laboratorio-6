@@ -7,14 +7,22 @@ import java.io.IOException;
 
 public class Championship {
 	
+	//------------------------------
+	// Associations
+	//------------------------------
 	private Spectators root;
 	private Spectators first;
 
-
+	//------------------------------
+	// Constructor 
+	//------------------------------
 	public Championship() {
 	
 	}
 	
+	//------------------------------
+	// Methods 
+	//------------------------------
 	public void loadTextFile(String path, String sep) throws IOException{
 		File f =  new File(path);
 		FileReader fr = new FileReader(f);
@@ -37,15 +45,9 @@ public class Championship {
 			}
 			line=br.readLine();
 			
-		}
-		prueba();
-		
+		}	
 	}
 	
-	public void prueba() {
-		System.out.println("-------------------------------------");
-		System.out.println(root.getLeft().getId());
-	}
 	public void addSpectator(Spectators sx) {
 		Spectators toAdd = sx;
 		if(root==null){

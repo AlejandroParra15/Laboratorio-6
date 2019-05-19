@@ -66,23 +66,6 @@ public class Controller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
-		BufferedReader br = null;
-		FileReader fr = null;
-		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
-			String sCurrentLine;
-			while ((sCurrentLine = br.readLine()) != null) {
-				if (sCurrentLine.charAt(0) != '#') {
-					String[] parts = sCurrentLine.split(",");
-				}
-			}
-			fr.close();
-			br.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}*/
 	}
 
 	@FXML

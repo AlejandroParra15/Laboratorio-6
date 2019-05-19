@@ -2,12 +2,18 @@ package model;
 
 public class Spectators{
 	
+	//------------------------------
+	// Associations
+	//------------------------------
 	private Spectators next;
 	private Spectators prev;
 	private Spectators left;
 	private Spectators right;
 	private Spectators parent; 
-
+	
+	//------------------------------
+	// Attributes
+	//------------------------------
 	private String id;
 	private String firstName;
 	private String lastName;
@@ -15,7 +21,10 @@ public class Spectators{
 	private String gender;
 	private String country;
 	private String birthdate;
-
+	
+	//------------------------------
+	// Constructor 
+    //------------------------------
 	public Spectators(String id, String firstName, String lastName, String email, String gender, String country,
 			String birthdate) {
 		this.id = id;
@@ -26,7 +35,10 @@ public class Spectators{
 		this.country = country;
 		this.birthdate = birthdate;
 	}
-
+	
+	//------------------------------
+	// Getters and Setters 
+	//------------------------------
 	public String getId() {
 		return id;
 	}
@@ -110,5 +122,8 @@ public class Spectators{
 	public int compare(Spectators sx) {
 		return id.compareTo(sx.getId());
 	}
-
+	
+	//------------------------------
+	// Methods 
+	//------------------------------
 }
