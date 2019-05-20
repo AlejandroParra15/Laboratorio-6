@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Championship {
+public class Championship{
 	
 	//------------------------------
 	// Associations
@@ -48,8 +48,9 @@ public class Championship {
 				String email = parts[3];
 				String gender = parts[4];
 				String country = parts[5];
-				String birthdate = parts[6];
-				Spectators sx = new Spectators(id, firstName, lastName, email, gender, country, birthdate);
+				String image =parts[6];
+				String birthdate = parts[7];
+				Spectators sx = new Spectators(id, firstName, lastName, email, gender, country,image, birthdate);
 				addSpectator(sx);
 				if(counter%2==0)
 					addToLinkedList(sx);
@@ -112,5 +113,19 @@ public class Championship {
 		return current;
 	}
 	
+	public Spectators searchParcitipants(String idx) {
+		Spectators sx = null;
+		Spectators current = first;
+		while(current.getNext()!=null) {
+			if(current.compareTo(idx)==0) {
+				sx=current;
+			}
+			current=current.getNext();
+		}
+		System.out.println("-----------------------------------");
+		System.out.println(current.getId());
+		return current;
+	}
+
 }
 

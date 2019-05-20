@@ -23,11 +23,11 @@ public class Spectators{
 	private String gender;
 	private String country;
 	private String birthdate;
-	
+	private String image;
 	//------------------------------
 	// Constructor 
     //------------------------------
-	public Spectators(String id, String firstName, String lastName, String email, String gender, String country,
+	public Spectators(String id, String firstName, String lastName, String email, String gender, String country, String image,
 			String birthdate) {
 		this.id = id;
 		this.firstName = firstName;
@@ -35,6 +35,7 @@ public class Spectators{
 		this.email = email;
 		this.gender = gender;
 		this.country = country;
+		this.image=image;
 		this.birthdate = birthdate;
 		next=null;
 		prev=null;
@@ -146,7 +147,25 @@ public class Spectators{
 	//------------------------------
 	// Methods 
 	//------------------------------
-	
+	public int compareTo(String idx) {
+		int comparator;
+		if(id.compareTo(idx)>0) {
+			comparator=1;
+		}else if(id.compareTo(idx)<0) {
+			comparator = -1;
+		}else {
+			comparator = 0;
+		}
+		return comparator;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 	
 	
 }

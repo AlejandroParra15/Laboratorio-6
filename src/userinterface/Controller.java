@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import model.Championship;
+import model.Spectators;
 
 public class Controller {
 	
@@ -80,8 +81,14 @@ public class Controller {
 	}
 
 	@FXML
-	void searchParticipantes(ActionEvent event) {
-	
+	void searchParticipants(ActionEvent event) {
+		Spectators sx=ch.searchParcitipants(tfSearchParticipantes.getText());
+		tfFirstName.setText(sx.getId());
+		tfLastName.setText(sx.getFirstName());
+		tfEmail.setText(sx.getEmail());
+		tfGender.setText(sx.getGender());
+		tfCountry.setText(sx.getCountry());
+		tfBirthday.setText(sx.getBirthdate());
 	}
 
 	@FXML
