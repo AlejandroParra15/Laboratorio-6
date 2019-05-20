@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Championship{
-	
+
 	//------------------------------
 	// Associations
 	//------------------------------
@@ -19,6 +19,8 @@ public class Championship{
 	private int treeSize;
 	private int counter;
 	private int linkedListSize;
+	private long participantsSerchTime;
+	private long spectatorsSerchTime;
 
 	//------------------------------
 	// Constructor 
@@ -27,8 +29,16 @@ public class Championship{
 		treeSize = 0; 
 		counter = 0;
 		linkedListSize=0;
+		participantsSerchTime=0;
+		spectatorsSerchTime=0;
 	}
 	
+	//------------------------------
+	// Getters and Setters
+	//------------------------------
+	public String getTimeP() {
+		return "TIME: "+participantsSerchTime+" ms";
+	}
 	//------------------------------
 	// Methods 
 	//------------------------------
@@ -39,8 +49,8 @@ public class Championship{
 		
 		String line = br.readLine();
 		while(line != null) {
+			System.out.println(line);
 			if(line.charAt(0)!='#') {
-				System.out.println(line);
 				String[] parts = line.split(sep);
 				String id = parts[0];
 				String firstName = parts[1];
@@ -49,7 +59,7 @@ public class Championship{
 				String gender = parts[4];
 				String country = parts[5];
 				String image =parts[6];
-				String birthdate = parts[7];
+				String birthdate = parts[7].substring(0, 8);
 				Spectators sx = new Spectators(id, firstName, lastName, email, gender, country,image, birthdate);
 				addSpectator(sx);
 				if(counter%2==0)
@@ -114,18 +124,31 @@ public class Championship{
 	}
 	
 	public Spectators searchParcitipants(String idx) {
+		long x=System.currentTimeMillis();
 		Spectators sx = null;
 		Spectators current = first;
-		while(current.getNext()!=null) {
-			if(current.compareTo(idx)==0) {
-				sx=current;
+		if(current!=null) {
+			while(current.getNext()!=null) {
+				if(current.compareTo(idx)==0) {
+					sx=current;
+				}
+				current=current.getNext();
 			}
-			current=current.getNext();
 		}
-		System.out.println("-----------------------------------");
-		System.out.println(current.getId());
-		return current;
+		long y=System.currentTimeMillis();
+		return sx;
 	}
+	
+	public void calculateTime(long x, long y, boolean w) {
+		long time=y-x;
+		if(w) 
+			participantsSerchTime=time;
+		else 
+			spectatorsSerchTime=time;
+	
+	}
+	
+	
 
 }
 

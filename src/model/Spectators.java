@@ -2,6 +2,8 @@ package model;
 
 import java.util.Random;
 
+import javafx.scene.image.Image;
+
 public class Spectators{
 	
 	//------------------------------
@@ -24,6 +26,7 @@ public class Spectators{
 	private String country;
 	private String birthdate;
 	private String image;
+	
 	//------------------------------
 	// Constructor 
     //------------------------------
@@ -166,6 +169,8 @@ public class Spectators{
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+
 	
 	
 }

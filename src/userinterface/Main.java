@@ -17,7 +17,7 @@ public class Main extends Application{
 	public void start(Stage stage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("copaPanamericana.fxml"));
 		Scene scene = new Scene(root);
-		stage.setTitle("");
+		stage.setTitle("IV Copa Panamericana de Voleibol Masculino Sub-21");
 		stage.setScene(scene);
 		stage.show();
 	}

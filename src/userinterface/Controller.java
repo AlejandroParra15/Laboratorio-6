@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -19,6 +20,9 @@ public class Controller {
 	
 	private Championship ch;
 	// FXML VARIABLES
+	
+    @FXML
+    private Label timeP;
 	@FXML
 	private TextField tfLoadData;
 	@FXML
@@ -83,12 +87,29 @@ public class Controller {
 	@FXML
 	void searchParticipants(ActionEvent event) {
 		Spectators sx=ch.searchParcitipants(tfSearchParticipantes.getText());
-		tfFirstName.setText(sx.getId());
-		tfLastName.setText(sx.getFirstName());
-		tfEmail.setText(sx.getEmail());
-		tfGender.setText(sx.getGender());
-		tfCountry.setText(sx.getCountry());
-		tfBirthday.setText(sx.getBirthdate());
+		if(sx!=null) {
+			lbMessageParticipantes.setText("");
+			tfID.setText(sx.getId());
+			tfFirstName.setText(sx.getFirstName());
+			tfLastName.setText(sx.getLastName());
+			tfEmail.setText(sx.getEmail());
+			tfGender.setText(sx.getGender());
+			tfCountry.setText(sx.getCountry());
+			tfBirthday.setText(sx.getBirthdate());
+			timeP.setText(ch.getTimeP());
+			imvPhoto.setImage(new Image(sx.getImage()));
+		}else {
+			lbMessageParticipantes.setText("The participant does not exit");
+			tfID.setText("");
+			tfFirstName.setText("");
+			tfLastName.setText("");
+			tfEmail.setText("");
+			tfGender.setText("");
+			tfCountry.setText("");
+			tfBirthday.setText("");
+			timeP.setText("");
+			imvPhoto.setImage(null);
+		}
 	}
 
 	@FXML

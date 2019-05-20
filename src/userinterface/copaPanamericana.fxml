@@ -83,9 +83,9 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="5.0" prefHeight="92.0" prefWidth="77.0">
+                              <VBox alignment="TOP_CENTER" layoutX="341.0" layoutY="5.0" prefHeight="92.0" prefWidth="115.0">
                                  <children>
-                                    <Label prefHeight="33.0" prefWidth="84.0" text="TIME (ms)">
+                                    <Label fx:id="timeP" prefHeight="34.0" prefWidth="103.0" text="TIME (ms)">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
@@ -97,7 +97,7 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <Label fx:id="lbMessageParticipantes" layoutX="45.0" layoutY="80.0" prefHeight="17.0" prefWidth="316.0" text="No se encontró el espectador con el id xxx" />
+                              <Label fx:id="lbMessageParticipantes" layoutX="46.0" layoutY="76.0" prefHeight="17.0" prefWidth="316.0" />
                            </children>
                         </Pane>
                         <Label alignment="CENTER" layoutX="56.0" layoutY="360.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search participantes">
