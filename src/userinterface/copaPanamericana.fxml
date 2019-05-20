@@ -35,7 +35,7 @@
                               <TextField fx:id="tfLoadData" layoutX="18.0" layoutY="29.0" prefHeight="31.0" prefWidth="222.0" />
                               <Button layoutX="277.0" layoutY="29.0" mnemonicParsing="false" onAction="#openFile" prefHeight="32.0" prefWidth="80.0" text="Open File" />
                               <Button layoutX="370.0" layoutY="29.0" mnemonicParsing="false" onAction="#loadData" prefHeight="32.0" prefWidth="83.0" text="Load" />
-                              <Label fx:id="lbMessageLoad" layoutX="32.0" layoutY="71.0" prefHeight="27.0" prefWidth="354.0" text="Los posibles asistentes al evento han sido cargados exitosamente" />
+                              <Label fx:id="lbMessageLoad" layoutX="32.0" layoutY="71.0" prefHeight="27.0" prefWidth="354.0" text="The assistants have been loaded" />
                            </children>
                         </Pane>
                         <Label alignment="CENTER" layoutX="58.0" layoutY="48.0" prefHeight="28.0" prefWidth="128.0" style="-fx-background-color: deepskyblue;" text="load data">
@@ -52,9 +52,9 @@
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <VBox alignment="TOP_CENTER" layoutX="379.0" layoutY="5.0" prefHeight="92.0" prefWidth="77.0">
+                              <VBox alignment="TOP_CENTER" layoutX="337.0" layoutY="5.0" prefHeight="92.0" prefWidth="119.0">
                                  <children>
-                                    <Label prefHeight="33.0" prefWidth="84.0" text="TIME (ms)">
+                                    <Label fx:id="TimeS" prefHeight="34.0" prefWidth="112.0" text="TIME (ms)">
                                        <font>
                                           <Font name="System Bold" size="16.0" />
                                        </font>
@@ -66,7 +66,7 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <Label fx:id="lbMessageSpectators" layoutX="45.0" layoutY="80.0" prefHeight="17.0" prefWidth="316.0" text="No se encontró el espectador con el id xxx" />
+                              <Label fx:id="lbMessageSpectators" layoutX="45.0" layoutY="76.0" prefHeight="17.0" prefWidth="316.0" />
                            </children>
                         </Pane>
                         <Label alignment="CENTER" layoutX="58.0" layoutY="200.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search spectators">
