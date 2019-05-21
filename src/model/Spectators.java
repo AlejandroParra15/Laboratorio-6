@@ -147,6 +147,14 @@ public class Spectators{
 		this.prev = prev;
 	}
 	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
 	//------------------------------
 	// Methods 
 	//------------------------------
@@ -161,16 +169,4 @@ public class Spectators{
 		}
 		return comparator;
 	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-
-	
-	
 }

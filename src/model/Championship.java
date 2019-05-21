@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import CustomsExceptions.CVSFileNotFoundException;
 
@@ -135,6 +137,18 @@ public class Championship{
 			current=current.getNext();
 		}
 		return current;
+	}
+	
+	public List<Spectators> getInfo() {
+		Spectators current=first;
+		List<Spectators> spectators = new ArrayList<>();
+		if(first != null)
+			spectators.add(current);
+		while(current.getNext()!=null) {
+			current=current.getNext();
+			spectators.add(current);
+		}
+		return spectators;
 	}
 	
 	public Spectators searchParcitipants(String idx) {

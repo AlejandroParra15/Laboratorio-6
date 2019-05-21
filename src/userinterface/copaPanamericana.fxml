@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -173,7 +177,38 @@
          </content></Tab>
     <Tab text="Estructuras">
          <content>
-            <BorderPane prefHeight="200.0" prefWidth="200.0" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <HBox fx:id="hboxDraw" alignment="CENTER" prefHeight="526.0" prefWidth="1174.0" />
+                     </content>
+                  </ScrollPane>
+               </center>
+               <bottom>
+                  <Pane prefHeight="98.0" prefWidth="1178.0" style="-fx-background-color: tomato;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button alignment="CENTER" layoutX="452.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="173.0" text="Participante">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="709.0" layoutY="24.0" mnemonicParsing="false" onAction="#spectatorDraw" prefHeight="51.0" prefWidth="173.0" text="Spectator">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <ComboBox layoutX="195.0" layoutY="30.0" prefHeight="38.0" prefWidth="150.0" promptText="Select Country" />
+                        <Label alignment="CENTER" prefHeight="103.0" prefWidth="158.0" style="-fx-background-color: deepskyblue;" text="Options">
+                           <font>
+                              <Font name="System Bold Italic" size="27.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="378.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="104.0" prefWidth="6.0" />
+                        <Separator layoutX="157.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="104.0" prefWidth="6.0" />
+                     </children>
+                  </Pane>
+               </bottom></BorderPane>
          </content></Tab>
   </tabs>
 </TabPane>
