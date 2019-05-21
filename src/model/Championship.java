@@ -50,6 +50,24 @@ public class Championship{
 	public Spectators getRoot() {
 		return root;
 	}
+	public int getTreeSize() {
+		return treeSize;
+	}
+	public int getCounter() {
+		return counter;
+	}
+	public int getLinkedListSize() {
+		return linkedListSize;
+	}
+	public long participantsSerchTime() {
+		return participantsSerchTime;
+	}
+	public long spectatorsSerchTime() {
+		return spectatorsSerchTime;
+	}
+	public Spectators getFirst() {
+		return first;
+	}
 	//------------------------------
 	// Methods 
 	//------------------------------
@@ -62,7 +80,7 @@ public class Championship{
 			
 			String line = br.readLine();
 			while(line != null) {
-				System.out.println(line);
+				//System.out.println(line);
 				if(line.charAt(0)!='#') {
 					String[] parts = line.split(sep);
 					String id = parts[0];
