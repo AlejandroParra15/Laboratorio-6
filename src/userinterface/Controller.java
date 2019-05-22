@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import CustomsExceptions.CVSFileNotFoundException;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -22,6 +27,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import model.Championship;
 import model.Spectators;
+import threads.threadDrawList;
 
 public class Controller {
 
@@ -66,29 +72,41 @@ public class Controller {
 	private TextField tfBirthday;
 	@FXML
 	private HBox hboxDraw;
+	@FXML
+    private ComboBox<String> cbCountry;
 
 	// Variables
 	String path;
+	public static String COUNTRY;
 
 	public void initialize() {
 		ch = new Championship();
+		lbMessageLoad.setVisible(false);
+		cbCountry.valueProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				COUNTRY = newValue;
+				hboxDraw.getChildren().clear();
+			}
+
+		});
 	}
 
 	@FXML
 	void spectatorDraw(ActionEvent event) {
-		List<Spectators> spectators = ch.getInfo();
-		
-		for (int i = 0; i < 20; i++) {
-			Line line1 = new Line(0,0,50,0);
-			Line line2 = new Line(0,0,50,0);
-			VBox vbox = new VBox(20); 
-			vbox.setAlignment(Pos.CENTER); 
-			vbox.getChildren().add(line1);
-			vbox.getChildren().add(line2);
-			Image img = new Image(spectators.get(i).getImage());
-			hboxDraw.getChildren().add(new ImageView(img));
-			hboxDraw.getChildren().add(vbox);
-		}
+		threadDrawList th = new threadDrawList(this, ch);
+		th.setDaemon(true);
+		th.start();
+	}
+	
+	public void draw(Node node) {
+		Platform.runLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				hboxDraw.getChildren().add(node);
+			}
+		});	
 	}
 
 	@FXML
@@ -98,6 +116,7 @@ public class Controller {
 		} catch (IOException | CVSFileNotFoundException e) {
 			e.printStackTrace();
 		}
+		cbCountry.setItems(ch.getCountrys());
 	}
 
 	@FXML

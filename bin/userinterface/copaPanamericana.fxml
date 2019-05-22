@@ -198,7 +198,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <ComboBox layoutX="195.0" layoutY="30.0" prefHeight="38.0" prefWidth="150.0" promptText="Select Country" />
+                        <ComboBox fx:id="cbCountry" layoutX="195.0" layoutY="30.0" prefHeight="38.0" prefWidth="150.0" promptText="Select Country" />
                         <Label alignment="CENTER" prefHeight="103.0" prefWidth="158.0" style="-fx-background-color: deepskyblue;" text="Options">
                            <font>
                               <Font name="System Bold Italic" size="27.0" />
