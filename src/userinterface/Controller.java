@@ -99,6 +99,11 @@ public class Controller {
 		th.start();
 	}
 	
+	@FXML
+    void participantDraw(ActionEvent event) {
+		
+    }
+	
 	public void draw(Node node) {
 		Platform.runLater(new Runnable() {
 			

@@ -37,9 +37,10 @@ public class threadDrawList extends Thread {
 				//
 				Image img = new Image(spectators.get(i).getImage());
 				Label lbName = new Label(spectators.get(i).getFirstName() + " " + spectators.get(i).getLastName());
+				lbName.setPrefWidth(100);
 				Label lbID = new Label(spectators.get(i).getId());
 				//
-				VBox vbox2 = new VBox(20);
+				VBox vbox2 = new VBox(15);
 				vbox2.setAlignment(Pos.CENTER);
 				vbox2.getChildren().add(new ImageView(img));
 				vbox2.getChildren().add(lbID);

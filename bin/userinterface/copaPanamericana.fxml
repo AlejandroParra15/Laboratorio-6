@@ -104,7 +104,7 @@
                               <Label fx:id="lbMessageParticipantes" layoutX="46.0" layoutY="76.0" prefHeight="17.0" prefWidth="316.0" />
                            </children>
                         </Pane>
-                        <Label alignment="CENTER" layoutX="56.0" layoutY="360.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search participantes">
+                        <Label alignment="CENTER" layoutX="56.0" layoutY="360.0" prefHeight="28.0" prefWidth="195.0" style="-fx-background-color: deepskyblue;" text="search participant">
                            <font>
                               <Font name="System Bold Italic" size="19.0" />
                            </font>
@@ -188,12 +188,12 @@
                <bottom>
                   <Pane prefHeight="98.0" prefWidth="1178.0" style="-fx-background-color: tomato;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" layoutX="452.0" layoutY="24.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="173.0" text="Participante">
+                        <Button alignment="CENTER" layoutX="452.0" layoutY="24.0" mnemonicParsing="false" onAction="#spectatorDraw" prefHeight="51.0" prefWidth="173.0" text="Spectator">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="709.0" layoutY="24.0" mnemonicParsing="false" onAction="#spectatorDraw" prefHeight="51.0" prefWidth="173.0" text="Spectator">
+                        <Button alignment="CENTER" layoutX="709.0" layoutY="24.0" mnemonicParsing="false" onAction="#participantDraw" prefHeight="51.0" prefWidth="173.0" text="Participant">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
