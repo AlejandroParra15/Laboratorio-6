@@ -45,8 +45,8 @@ public class threadDrawList extends Thread {
 				vbox2.getChildren().add(new ImageView(img));
 				vbox2.getChildren().add(lbID);
 				vbox2.getChildren().add(lbName);
-				ct.draw(vbox2);
-				ct.draw(vbox);
+				ct.drawList(vbox2);
+				ct.drawList(vbox);
 			}
 		}
 	}

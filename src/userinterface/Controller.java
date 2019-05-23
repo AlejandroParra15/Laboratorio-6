@@ -17,10 +17,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.FileChooser;
@@ -28,6 +30,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import model.Championship;
 import model.Spectators;
 import threads.threadDrawList;
+import threads.threadDrawTree;
 
 public class Controller {
 
@@ -73,20 +76,23 @@ public class Controller {
 	@FXML
 	private HBox hboxDraw;
 	@FXML
-    private ComboBox<String> cbCountry;
+	private ComboBox<String> cbCountry;
+	@FXML
+	private ScrollPane scrollPane;
 
 	// Variables
 	String path;
 	public static String COUNTRY;
+	Pane pane;
 
 	public void initialize() {
 		ch = new Championship();
 		lbMessageLoad.setVisible(false);
+		pane = new Pane();
 		cbCountry.valueProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				COUNTRY = newValue;
-				hboxDraw.getChildren().clear();
 			}
 
 		});
@@ -94,24 +100,39 @@ public class Controller {
 
 	@FXML
 	void spectatorDraw(ActionEvent event) {
+		pane.getChildren().clear();
+		scrollPane.setContent(pane);
+		threadDrawTree th = new threadDrawTree(this, ch);
+		th.setDaemon(true);
+		th.start();
+	}
+
+	@FXML
+	void participantDraw(ActionEvent event) {
+		scrollPane.setContent(hboxDraw);
 		threadDrawList th = new threadDrawList(this, ch);
 		th.setDaemon(true);
 		th.start();
 	}
-	
-	@FXML
-    void participantDraw(ActionEvent event) {
-		
-    }
-	
-	public void draw(Node node) {
+
+	public void drawList(Node node) {
 		Platform.runLater(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				hboxDraw.getChildren().add(node);
 			}
-		});	
+		});
+	}
+	
+	public void drawTree(Node node) {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				pane.getChildren().add(node);
+			}
+		});
 	}
 
 	@FXML

@@ -179,7 +179,7 @@
          <content>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <content>
                         <HBox fx:id="hboxDraw" alignment="CENTER" prefHeight="526.0" prefWidth="1174.0" />
                      </content>

@@ -26,6 +26,8 @@ public class Spectators{
 	private String country;
 	private String birthdate;
 	private String image;
+	private int x;
+	private int y;
 	
 	//------------------------------
 	// Constructor 
@@ -168,5 +170,21 @@ public class Spectators{
 			comparator = 0;
 		}
 		return comparator;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 }

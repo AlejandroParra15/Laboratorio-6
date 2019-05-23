@@ -161,6 +161,59 @@ public class Championship {
 			}
 		}
 	}
+	
+	public void addSpectatorDraw(Spectators sx) {
+		Spectators toAdd = sx;
+		if (root == null) {
+			root = toAdd;
+			toAdd.setX(580);
+			toAdd.setY(30);
+		} else {
+			Spectators current = root;
+			boolean added = false;
+			
+			while (!added) {
+   
+				if (toAdd.compare(current) > 0) {
+					if (current.getRight() == null) {
+						current.setRight(toAdd);
+						toAdd.setX(current.getX()+randBetween(150, 350));
+						toAdd.setY(current.getY()+randBetween(150, 350));
+						added = true;
+					} else {
+						current = current.getRight();
+					}
+				} else {
+					if (current.getLeft() == null) {
+						current.setLeft(toAdd);
+						toAdd.setX(current.getX()-randBetween(150, 350));
+						toAdd.setY(current.getY()+randBetween(150, 350));
+						added = true;
+					} else {
+						current = current.getLeft();
+					}
+
+				}
+			}
+		}
+	}
+	
+	public int randBetween(int start, int end) {
+		return start + (int) Math.round(Math.random() * (end - start));
+	}
+	
+	public List<Spectators> preorder2(){
+        List<Spectators> lis= new ArrayList<>();
+        preorder2(root,lis);
+        return lis;
+    }
+    private void preorder2(Spectators current,List<Spectators> lis){
+        if(current != null) {
+            lis.add(current);
+            preorder2(current.getLeft(),lis);
+            preorder2(current.getRight(),lis);
+        }
+    }    
 
 	public void addToLinkedList(Spectators sx) {
 		Spectators toAdd = sx;
